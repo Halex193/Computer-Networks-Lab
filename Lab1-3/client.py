@@ -17,7 +17,7 @@ def readString(s):
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     sock.connect(("127.0.0.1", 1921))
-    message = "This is the string"
+    message = input("Input string: ")
     data = message.encode() + b'\0'
     sock.send(data)
     print(readString(sock))
